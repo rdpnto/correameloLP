@@ -924,6 +924,7 @@ div.img-edit::before {
     width: 124px;
     margin: 3rem auto;
     color: transparent;
+    background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
   }
