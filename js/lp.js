@@ -61,10 +61,6 @@ jQuery(function($) {'use strict';
 		}
 	})
 
-	
-	
-
-
 });
 
 // *************** POPUP FORM *************** //
@@ -75,7 +71,6 @@ var home = document.getElementById('home');
 
 function showForm() {
 	home.style.overflowY = "hidden";
-	// home.style.marginRight = "17px";
 	form.classList.remove('hidden');
     setTimeout(function () {
       form.classList.remove('visHide');
@@ -87,8 +82,7 @@ function hideForm() {
 	home.style.overflowY = "overlay";
 	setTimeout(function () {
 		form.classList.add('hidden');    
-		// home.style.marginRight = "0";
-	  }, 450);  
+	  }, 400);  
 }
 
 // FORM - CLOSE ON ESC
@@ -103,7 +97,6 @@ $(document).click(function(e) {
 		hideForm();
 	}
 })
-
 
 //************** IMG-NOSELECT ****************/
 
