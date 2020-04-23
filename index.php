@@ -9,7 +9,7 @@ switch ($request) {
     case '' :
         require __DIR__ . '/index.html';
         break;
-    case '/lp' :
+    case '/negativacao-indevida' :
         require __DIR__ . '/lp.html';
         break;
     default:
