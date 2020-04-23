@@ -8,7 +8,7 @@ body {
   color: #64686d;
   line-height: 26px;
   overflow: overlay;
-  margin-bottom: 74px;
+  margin-bottom: 72px;
   box-shadow: #000 0 7px 35px 0;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -28,9 +28,10 @@ textarea { resize: vertical; }
   display: none;
 }
 
-.no-select {
+.no-select, .placeholder {
   user-zoom: none; 
   user-select: none;
+  pointer-events: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
@@ -126,20 +127,29 @@ nav.navbar .header ul li a {
 }
 
 .header .phone {
-  font-size: 18px;
-  opacity: 84%;
+  font-size: 22px;
+  opacity: .92;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.header .phone i {
+  color: transparent;
+    background: radial-gradient(circle, rgba(214,108,32,1) 15%, rgba(161,81,14,1) 45%, rgba(120,60,0,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
 .header .phone p {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 600;
-  margin: 0 .6em;
+  font-family: inherit;
+  font-weight: 500;
+  margin: 0 0 0 .5em;
+  color: #3c1f0b;
 }
 @media screen and (max-width: 340px) {
-  .header .phone p {font-size: 16px;}
+  .header .phone p {font-size: 15px !important;}
   .judge div.call {margin: 2em auto !important;}
 }
 
@@ -299,7 +309,7 @@ section.container.judge {
 }        
 
 .judge .row:nth-child(1) {
-  margin-top: 210px;
+  margin-top: 180px;
 }
 
 section.container.judge::after {
@@ -307,7 +317,8 @@ section.container.judge::after {
   background: url(../images/lp/bg.jpg) center /cover;
   filter: grayscale(10%) brightness(70%);
   position: absolute;
-  width: 100%; height: 100%;
+  width: 100%; min-width: 100%;
+  height: 100%;
   left: 0; top: 0;
 }
 
@@ -553,7 +564,7 @@ section.window::before {
   width: 100%; height: 100%;
   left: 0; top: 0;
   background: url(../images/lp/hands.jpg) no-repeat center /auto fixed;
-  filter: grayscale(50%) brightness(70%) contrast(85%);
+  /* filter: grayscale(50%) brightness(70%) contrast(85%); */
 }
 
 @media only screen and (min-width: 1800px) {
@@ -933,6 +944,8 @@ div.img-edit::before {
 
 
 @media screen and (max-width: 500px) {
+
+  /* body {display: none;} */
   /************ NAVBAR ************/
   nav.navbar .header {
     grid-template-columns: 1.5fr 1fr !important;
@@ -942,7 +955,8 @@ div.img-edit::before {
     justify-content: center;
   }
   .header .phone p {
-    margin: 0 0 10px;
+    margin: 5px 0;
+    font-size: 18px;
   }
 
   /************ FIRST SECTION ************/
@@ -1013,4 +1027,27 @@ div.img-edit::before {
   .popup-form div#form h3 {
     margin: 20px 0 10px;
   }
+
+  /************ IPHONE8 ISSUE *************/
+  section.container.judge, section.container.judge::after {width: 100vw;}
+}
+
+@media only screen and (max-height:600px) and (min-height: 500px) and (max-width:500px){
+  section.container.judge, section.container.judge::after {height: 104vh;}
+  section.judge .row h1 {font-size: 24px;}
+  .judge div.call {margin: 60px auto 0;}
+  .judge .call a {font-size: 22px;}
+  section.window,section.window::before {width: 100vw;}
+}
+
+/************ SMALL SCREEN *************/
+
+@media only screen and (max-width: 350px) {
+  nav.navbar {height: 70px;}
+  #home > nav > div,nav.navbar .header {height: 100%;}
+  section.judge .row h1 {font-size: 20px;}
+  .judge div.call {margin: 10px auto 0;}
+  .judge .call a {font-size: 18px;}
+  section.container.judge, section.container.judge::after {height: 530px; width: 100vw;}
+  .judge div.call {margin: 2em auto !important;}
 }

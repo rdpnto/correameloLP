@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Roboto&display=swap');
+
+html{
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  color: rgba(255,255,255,.75);
+  background-color: rgb(25,25,25);  
+}
+.line-1{
+  position: relative;
+  font-family: 'Anonymous Pro', monospace;
+  top: 50%;  
+  width: 4.4em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 1.2s steps(8) 1s 1 normal both,
+             blinkTextCursor 500ms steps(8) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 4.35em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(187, 187, 187, 0.85);}
+  to{border-right-color: transparent;}
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1,p {
+  color: black;
+  margin: 1em auto;
+  font-family: 'Roboto', sans-serif;
+} p {
+  text-align: left;
+} h1 {
+  margin: 1em auto 2em;
+}
+
+.txt {
+  text-align: center;
+  font-family: sans-serif;
+  margin: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #45aed6;
+}

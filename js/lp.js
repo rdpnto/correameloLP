@@ -24,19 +24,28 @@ jQuery(function($) {'use strict';
 	
 	// *********** FIXED FOOTER ************ //  
 
+	$(document).ready(footerDisplay);
 	$(document).scroll(footerDisplay);
 	$(window).resize(footerDisplay);
-	$(document).ready(footerDisplay);
 	
 	function footerDisplay() {
-		var y = $(this).scrollTop();
-		var h = $(document).height();
-		var x = h - y;
-		if ( x < 1200) {
-			$('#footer').show();
+		var faq = $("#faq");
+		var footer = $("#footer");
+		
+		if (footer.offset().top > faq.offset().top) {
+			footer.css('display', 'block')
 		} else {
-			$('#footer').hide();
+			footer.css('display', 'none')
 		}
+		// OLD-FOOTER_DISPLAY
+		// var y = $(this).scrollTop();
+		// var h = $(document).height();
+		// var x = h - y;
+		// if ( x < 1200) {
+		// 	$('#footer').show();
+		// } else {
+		// 	$('#footer').hide();
+		// }
 	}
 
 	// ************* WA-BTN ************* // 
@@ -51,7 +60,7 @@ jQuery(function($) {'use strict';
 	
 	$(window).on('scroll', function() {
 		var section = $( ".getintouch" );
-		var wabtn = $( ".float" )
+		var wabtn = $( ".float" );
 	
 
 		if (wabtn.offset().top > section.offset().top) {
@@ -60,6 +69,16 @@ jQuery(function($) {'use strict';
 			wabtn.css('opacity', '1')
 		}
 	})
+
+	// ************* LAPTOP ZOOM ************* // 
+
+	$(document).ready(noteZoom);
+
+	function noteZoom() {
+		if (window.matchMedia('(min-width:900px) and (max-width:1366px)').matches) {
+			$('html').css('zoom','0.86');
+		}
+	}
 
 });
 
