@@ -1,9 +1,9 @@
 jQuery(function($) {'use strict';
 
 	// Navigation Scroll
-	$(window).scroll(function(event) {
-		Scroll();
-	});
+	// $(window).scroll(function(event) {
+	// 	Scroll();
+	// });
 
 	$('.navbar-collapse ul li a').on('click', function() {  
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
@@ -11,24 +11,24 @@ jQuery(function($) {'use strict';
 	});
 
 	// User define function
-	function Scroll() {
-		var contentTop      =   [];
-		var contentBottom   =   [];
-		var winTop      =   $(window).scrollTop();
-		var rangeTop    =   200;
-		var rangeBottom =   500;
-		$('.navbar-collapse').find('.scroll a').each(function(){
-			contentTop.push( $( $(this).attr('href') ).offset().top);
-			contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
-		})
-		$.each( contentTop, function(i){
-			if ( winTop > contentTop[i] - rangeTop ){
-				$('.navbar-collapse li.scroll')
-				.removeClass('active')
-				.eq(i).addClass('active');			
-			}
-		})
-	};
+	// function Scroll() {
+	// 	var contentTop      =   [];
+	// 	var contentBottom   =   [];
+	// 	var winTop      =   $(window).scrollTop();
+	// 	var rangeTop    =   200;
+	// 	var rangeBottom =   500;
+	// 	$('.navbar-collapse').find('.scroll a').each(function(){
+	// 		contentTop.push( $( $(this).attr('href') ).offset().top);
+	// 		contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+	// 	})
+	// 	$.each( contentTop, function(i){
+	// 		if ( winTop > contentTop[i] - rangeTop ){
+	// 			$('.navbar-collapse li.scroll')
+	// 			.removeClass('active')
+	// 			.eq(i).addClass('active');			
+	// 		}
+	// 	})
+	// };
 
 	$('#tohash').on('click', function(){
 		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
@@ -202,10 +202,10 @@ jQuery(function($) {'use strict';
 			url: 'sendemail.php',
 			data: form.serialize(),
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando E-mail...</p>').fadeIn() );
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando Mensagem...</p>').fadeIn() );
 			}
 		}).done(function(){
-			form_status.html('<p class="text-success">Obrigado por nos contatar, o mais breve possível retornaremos o contato. </p>').delay(5000).fadeOut();
+			form_status.html('<p class="text-success">Sua mensagem foi enviada com sucesso. A Correa Melo agradece seu contato, e irá retorná-lo em breve.</p>').delay(5000).fadeOut();
 		});
 	});
 

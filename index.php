@@ -10,7 +10,7 @@ switch ($request) {
         require __DIR__ . '/index.html';
         break;
     case '/negativacao-indevida' :
-        require __DIR__ . '/lp.html';
+        require('lp.html');
         break;
     default:
         http_response_code(404);

@@ -15,10 +15,10 @@ jQuery(function($) {'use strict';
 			url: 'sendemail.php',
 			data: form.serialize(),
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando E-mail...</p>').fadeIn() );
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando Mensagem...</p>').fadeIn() );
 			}
 		}).done(function(){
-			form_status.html('<p class="text-success">Obrigado por nos contatar, o mais breve possível retornaremos o contato. </p>').delay(5000).fadeOut();
+			form_status.html('<p class="text-success">Sua mensagem foi enviada com sucesso. A Correa Melo agradece seu contato, e irá retorná-lo em breve.</p>').delay(5000).fadeOut();
 		});
 	});
 	
